@@ -1,0 +1,38 @@
+diff -up ./examples/test-webapp/src/main/java/com/acme/CookieDump.java.fix ./examples/test-webapp/src/main/java/com/acme/CookieDump.java
+--- ./examples/test-webapp/src/main/java/com/acme/CookieDump.java.fix	2009-11-03 12:32:01.000000000 -0500
++++ ./examples/test-webapp/src/main/java/com/acme/CookieDump.java	2009-11-03 12:33:52.000000000 -0500
+@@ -26,6 +26,8 @@ import javax.servlet.http.HttpServletReq
+ import javax.servlet.http.HttpServletResponse;
+ import javax.servlet.http.HttpSession;
+ 
++import org.mortbay.util.StringUtil;
++
+ 
+ /* ------------------------------------------------------------ */
+ /** Test Servlet Cookies.
+@@ -89,7 +91,7 @@ public class CookieDump extends HttpServ
+         
+         for (int i=0;cookies!=null && i<cookies.length;i++)
+         {
+-            out.println("<b>"+cookies[i].getName()+"</b>="+cookies[i].getValue()+"<br/>");
++            out.println("<b>"+deScript(cookies[i].getName())+"</b>="+deScript(cookies[i].getValue())+"<br/>");
+         }
+         
+         out.println("<form action=\""+response.encodeURL(getURI(request))+"\" method=\"post\">"); 
+@@ -114,5 +116,15 @@ public class CookieDump extends HttpServ
+             uri=request.getRequestURI();
+         return uri;
+     }
+-    
++
++    /* ------------------------------------------------------------ */
++    protected String deScript(String string)
++    {
++        if (string==null)
++            return null;
++        string=StringUtil.replace(string, "&", "&amp;");
++        string=StringUtil.replace(string, "<", "&lt;");
++        string=StringUtil.replace(string, ">", "&gt;");
++        return string;
++    }
+ }

@@ -1,0 +1,69 @@
+--- pom.xml.sav	2009-09-22 10:17:54.000000000 +0300
++++ pom.xml	2009-09-29 11:01:34.323185945 +0300
+@@ -61,12 +61,12 @@
+           <target>1.4</target>
+         </configuration>
+       </plugin>
+-      <plugin>
++      <!--plugin>
+         <artifactId>maven-release-plugin</artifactId>
+         <configuration>
+           <tagBase>https://svn.codehaus.org/jetty/jetty/tags</tagBase>
+         </configuration>
+-      </plugin>
++      </plugin-->
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-jar-plugin</artifactId>
+@@ -110,24 +110,24 @@
+     <module>modules/util</module>
+     <module>modules/util5</module>
+     <module>modules/jetty</module>
+-    <module>modules/jsp-2.1</module>
++    <!--module>modules/jsp-2.1</module-->
+     <module>modules/jsp-api-2.0</module>
+     <module>modules/jsp-2.0</module>
+     <module>modules/management</module>
+     <module>modules/start</module>
+     <module>modules/maven-plugin</module>
+-    <module>modules/jspc-maven-plugin</module>
++    <!--module>modules/jspc-maven-plugin</module-->
+     <module>modules/naming</module>
+     <module>modules/plus</module>
+     <module>modules/html</module>
+-    <module>modules/annotations</module>
++    <!--module>modules/annotations</module-->
+ 
+     <module>extras/servlet-tester</module>
+-    <module>extras/xbean</module>
+-    <module>extras/spring</module>
++    <!--module>extras/xbean</module>
++    <module>extras/spring</module-->
+     <module>extras/sslengine</module>
+-    <module>extras/ajp</module>
+-    <module>extras/win32service</module>
++    <!--module>extras/ajp</module>
++    <module>extras/win32service</module-->
+     <!--module>extras/gwt</module-->
+     <module>extras/threadpool</module>
+     <module>extras/client</module>
+@@ -141,16 +141,16 @@
+     <module>examples/tests</module>
+ 
+ 
+-    <module>contrib/cometd</module>
++    <!--module>contrib/cometd</module-->
+     <module>contrib/jetty-ant</module>
+     <module>contrib/jetty-rewrite-handler</module>
+     <module>contrib/jetty-ldap-jaas</module>
+     <module>contrib/start-daemon</module>
+     <!--module>contrib/grizzly</module-->
+     <!--module>contrib/wadi</module-->
+-    <module>contrib/terracotta</module>
++    <!--module>contrib/terracotta</module>
+     <module>contrib/sweeper</module>
+-    <module>extras/setuid</module>
++    <module>extras/setuid</module-->
+   </modules>
+   <dependencyManagement>
+     <dependencies>
